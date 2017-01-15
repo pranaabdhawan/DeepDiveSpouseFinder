@@ -1,0 +1,42 @@
+2017-01-07 17:23:08.846692 # on Pranaabs-MacBook-Pro.local: deepdive do articles
+2017-01-07 17:23:08.846960 # run/20170107/172304.811709000/plan.sh
+2017-01-07 17:23:08.846988 # execution plan for data/articles
+2017-01-07 17:23:08.847008 
+2017-01-07 17:23:08.847028 : ## process/init/app ##########################################################
+2017-01-07 17:23:08.847047 : # Done: 2017-01-07T16:20:10-0500 (1h 2m 54s ago)
+2017-01-07 17:23:08.847066 : process/init/app/run.sh
+2017-01-07 17:23:08.847086 : mark_done process/init/app
+2017-01-07 17:23:08.847104 : ##############################################################################
+2017-01-07 17:23:08.847122 
+2017-01-07 17:23:08.847141 ## process/init/relation/articles ############################################
+2017-01-07 17:23:08.847159 # Done: 2017-01-07T16:20:10-0500 (1h 2m 54s ago)
+2017-01-07 17:23:08.847178 process/init/relation/articles/run.sh
+2017-01-07 17:23:08.847197 ++ dirname process/init/relation/articles/run.sh
+2017-01-07 17:23:08.847215 + cd process/init/relation/articles
+2017-01-07 17:23:08.847235 + export DEEPDIVE_CURRENT_PROCESS_NAME=process/init/relation/articles
+2017-01-07 17:23:08.847253 + DEEPDIVE_CURRENT_PROCESS_NAME=process/init/relation/articles
+2017-01-07 17:23:08.847272 + deepdive create table articles
+2017-01-07 17:23:08.934995 NOTICE:  table "articles" does not exist, skipping
+2017-01-07 17:23:08.959767 CREATE TABLE
+2017-01-07 17:23:08.960894 + deepdive load articles
+2017-01-07 17:23:09.033324 Loading articles from input/articles.tsv.sh (tsv format)
+2017-01-07 17:23:09.043118 ERROR: Missing /Users/pranaab/Developer/Term3A/URA/spouseLocal/input/signalmedia/signalmedia-1m.jsonl
+2017-01-07 17:23:09.043185 # Please Download it from http://research.signalmedia.co/newsir16/signal-dataset.html
+2017-01-07 17:23:09.043206 
+2017-01-07 17:23:09.043225 # Alternatively, use our sampled data by running:
+2017-01-07 17:23:09.043242 deepdive load articles input/articles-100.tsv.bz2
+2017-01-07 17:23:09.043257 
+2017-01-07 17:23:09.043273 # Or, skipping all NLP markup processes by running:
+2017-01-07 17:23:09.043289 deepdive create table sentences
+2017-01-07 17:23:09.043306 deepdive load sentences
+2017-01-07 17:23:09.043322 deepdive mark done sentences
+2017-01-07 17:23:09.149635 COPY 0
+2017-01-07 17:23:09.156204 mark_done process/init/relation/articles
+2017-01-07 17:23:09.175802 ##############################################################################
+2017-01-07 17:23:09.175886 
+2017-01-07 17:23:09.175912 ## data/articles #############################################################
+2017-01-07 17:23:09.175931 # Done: 2017-01-07T16:20:10-0500 (1h 2m 54s ago)
+2017-01-07 17:23:09.175951 # no-op
+2017-01-07 17:23:09.175971 mark_done data/articles
+2017-01-07 17:23:09.190086 ##############################################################################
+2017-01-07 17:23:09.190152 

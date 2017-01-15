@@ -1,0 +1,69 @@
+2017-01-08 08:15:36.751561 # on Pranaabs-MacBook-Pro.local: deepdive do spouse_feature
+2017-01-08 08:15:36.751816 # run/20170108/081533.814667000/plan.sh
+2017-01-08 08:15:36.751844 # execution plan for data/spouse_feature
+2017-01-08 08:15:36.751863 
+2017-01-08 08:15:36.751882 : ## process/init/app ##########################################################
+2017-01-08 08:15:36.751900 : # Done: 2017-01-07T16:20:10-0500 (15h 55m 23s ago)
+2017-01-08 08:15:36.751918 : process/init/app/run.sh
+2017-01-08 08:15:36.751935 : mark_done process/init/app
+2017-01-08 08:15:36.751952 : ##############################################################################
+2017-01-08 08:15:36.751970 
+2017-01-08 08:15:36.751988 : ## process/init/relation/sentences ###########################################
+2017-01-08 08:15:36.752006 : # Done: 2017-01-07T20:56:10-0500 (11h 19m 23s ago)
+2017-01-08 08:15:36.752023 : process/init/relation/sentences/run.sh
+2017-01-08 08:15:36.752040 : mark_done process/init/relation/sentences
+2017-01-08 08:15:36.752058 : ##############################################################################
+2017-01-08 08:15:36.752075 
+2017-01-08 08:15:36.752093 : ## data/sentences ############################################################
+2017-01-08 08:15:36.752110 : # Done: 2017-01-07T20:56:10-0500 (11h 19m 23s ago)
+2017-01-08 08:15:36.752130 : # no-op
+2017-01-08 08:15:36.752149 : mark_done data/sentences
+2017-01-08 08:15:36.752167 : ##############################################################################
+2017-01-08 08:15:36.752185 
+2017-01-08 08:15:36.752203 : ## process/ext_person_mention_by_map_person_mention ##########################
+2017-01-08 08:15:36.752221 : # Done: 2017-01-07T21:11:42-0500 (11h 3m 51s ago)
+2017-01-08 08:15:36.752239 : process/ext_person_mention_by_map_person_mention/run.sh
+2017-01-08 08:15:36.752257 : mark_done process/ext_person_mention_by_map_person_mention
+2017-01-08 08:15:36.752275 : ##############################################################################
+2017-01-08 08:15:36.752292 
+2017-01-08 08:15:36.752310 : ## data/person_mention #######################################################
+2017-01-08 08:15:36.752328 : # Done: 2017-01-07T21:11:42-0500 (11h 3m 51s ago)
+2017-01-08 08:15:36.752346 : # no-op
+2017-01-08 08:15:36.752363 : mark_done data/person_mention
+2017-01-08 08:15:36.752380 : ##############################################################################
+2017-01-08 08:15:36.752397 
+2017-01-08 08:15:36.752414 ## process/ext_spouse_feature_by_extract_spouse_features #####################
+2017-01-08 08:15:36.752431 # Done: N/A
+2017-01-08 08:15:36.752448 process/ext_spouse_feature_by_extract_spouse_features/run.sh
+2017-01-08 08:15:36.752465 ++ dirname process/ext_spouse_feature_by_extract_spouse_features/run.sh
+2017-01-08 08:15:36.752482 + cd process/ext_spouse_feature_by_extract_spouse_features
+2017-01-08 08:15:36.752499 + export DEEPDIVE_CURRENT_PROCESS_NAME=process/ext_spouse_feature_by_extract_spouse_features
+2017-01-08 08:15:36.752518 + DEEPDIVE_CURRENT_PROCESS_NAME=process/ext_spouse_feature_by_extract_spouse_features
+2017-01-08 08:15:36.752536 + export DEEPDIVE_LOAD_FORMAT=tsv
+2017-01-08 08:15:36.752553 + DEEPDIVE_LOAD_FORMAT=tsv
+2017-01-08 08:15:36.752571 + deepdive compute execute 'input_sql= SELECT R0.mention_id AS "person_mention.R0.mention_id", R1.mention_id AS "person_mention.R1.mention_id", R0.begin_index AS "person_mention.R0.begin_index", R0.end_index AS "person_mention.R0.end_index", R1.begin_index AS "person_mention.R1.begin_index", R1.end_index AS "person_mention.R1.end_index", R0.doc_id AS "person_mention.R0.doc_id", R0.sentence_index AS "person_mention.R0.sentence_index", R2.tokens AS "sentences.R2.tokens", R2.lemmas AS "sentences.R2.lemmas", R2.pos_tags AS "sentences.R2.pos_tags", R2.ner_tags AS "sentences.R2.ner_tags", R2.dep_types AS "sentences.R2.dep_types", R2.dep_tokens AS "sentences.R2.dep_tokens"
+2017-01-08 08:15:36.752590 FROM person_mention R0, person_mention R1, sentences R2
+2017-01-08 08:15:36.752607         WHERE R1.doc_id = R0.doc_id  AND R1.sentence_index = R0.sentence_index  AND R2.doc_id = R0.doc_id  AND R2.sentence_index = R0.sentence_index 
+2017-01-08 08:15:36.752624           ' 'command="$DEEPDIVE_APP"/udf/extract_spouse_features.py' output_relation=spouse_feature
+2017-01-08 08:15:36.787591 Executing with the following configuration:
+2017-01-08 08:15:36.787647  DEEPDIVE_NUM_PROCESSES=3
+2017-01-08 08:15:36.787667  DEEPDIVE_NUM_PARALLEL_UNLOADS=1
+2017-01-08 08:15:36.787684  DEEPDIVE_NUM_PARALLEL_LOADS=1
+2017-01-08 08:15:36.787756  output_relation_tmp=dd_tmp_spouse_feature
+2017-01-08 08:15:36.787780 
+2017-01-08 08:15:36.948980 NOTICE:  table "spouse_feature" does not exist, skipping
+2017-01-08 08:15:36.954179 CREATE TABLE
+2017-01-08 08:15:37.029127 CREATE TABLE
+2017-01-08 08:15:37.166022 unloading to feed_processes-1: ' SELECT R0.mention_id AS "person_mention.R0.mention_id", R1.mention_id AS "person_mention.R1.mention_id", R0.begin_index AS "person_mention.R0.begin_index", R0.end_index AS "person_mention.R0.end_index", R1.begin_index AS "person_mention.R1.begin_index", R1.end_index AS "person_mention.R1.end_index", R0.doc_id AS "person_mention.R0.doc_id", R0.sentence_index AS "person_mention.R0.sentence_index", R2.tokens AS "sentences.R2.tokens", R2.lemmas AS "sentences.R2.lemmas", R2.pos_tags AS "sentences.R2.pos_tags", R2.ner_tags AS "sentences.R2.ner_tags", R2.dep_types AS "sentences.R2.dep_types", R2.dep_tokens AS "sentences.R2.dep_tokens"
+2017-01-08 08:15:37.166083 FROM person_mention R0, person_mention R1, sentences R2
+2017-01-08 08:15:37.166106         WHERE R1.doc_id = R0.doc_id  AND R1.sentence_index = R0.sentence_index  AND R2.doc_id = R0.doc_id  AND R2.sentence_index = R0.sentence_index 
+2017-01-08 08:15:37.166127           '
+2017-01-08 08:15:37.170384 bash: /Users/pranaab/Developer/Term3A/URA/spouseLocal/udf/extract_spouse_features.py: Permission denied
+2017-01-08 08:15:37.170819 /Users/pranaab/local/util/compute-driver/local/compute-execute: line 140: kill: (29913) - No such process
+2017-01-08 08:15:37.177014 [ERROR] command='"$DEEPDIVE_APP"/udf/extract_spouse_features.py': PID 29913: finished with non-zero exit status (0)
+2017-01-08 08:15:37.177361 /Users/pranaab/local/util/compute-driver/local/compute-execute: line 138: 29914 Terminated: 15          DEEPDIVE_CURRENT_PROCESS_INDEX=$i bash -c "$command" < process-$i.input > process-$i.output
+2017-01-08 08:15:37.177399 /Users/pranaab/local/util/compute-driver/local/compute-execute: line 138: 29915 Terminated: 15          DEEPDIVE_CURRENT_PROCESS_INDEX=$i bash -c "$command" < process-$i.input > process-$i.output
+2017-01-08 08:15:37.177421 /Users/pranaab/local/util/compute-driver/local/compute-execute: line 138: 29919 Terminated: 15          mkmimo process-*.output \> output_computed-*
+2017-01-08 08:15:37.177440 /Users/pranaab/local/util/compute-driver/local/compute-execute: line 138: 29920 Terminated: 15          deepdive-load "$output_relation_tmp" output_computed-*
+2017-01-08 08:15:37.177457 /Users/pranaab/local/util/compute-driver/local/compute-execute: line 138: 29926 Terminated: 15          deepdive-db unload "$input_sql" "$DEEPDIVE_LOAD_FORMAT" feed_processes-*
+2017-01-08 08:15:37.177476 /Users/pranaab/local/util/compute-driver/local/compute-execute: line 138: 29927 Terminated: 15          mkmimo feed_processes-* \> process-*.input

@@ -1,0 +1,24 @@
+2017-01-07 15:52:38.030166 # on Pranaabs-MacBook-Pro.local: deepdive do articles
+2017-01-07 15:52:38.030386 # run/20170107/155234.580949000/plan.sh
+2017-01-07 15:52:38.030412 # execution plan for data/articles
+2017-01-07 15:52:38.030431 
+2017-01-07 15:52:38.030452 ## process/init/app ##########################################################
+2017-01-07 15:52:38.030469 # Done: N/A
+2017-01-07 15:52:38.030486 process/init/app/run.sh
+2017-01-07 15:52:38.030503 ++ dirname process/init/app/run.sh
+2017-01-07 15:52:38.030520 + cd process/init/app
+2017-01-07 15:52:38.030537 + export DEEPDIVE_CURRENT_PROCESS_NAME=process/init/app
+2017-01-07 15:52:38.030558 + DEEPDIVE_CURRENT_PROCESS_NAME=process/init/app
+2017-01-07 15:52:38.030578 + deepdive db init
+2017-01-07 15:52:38.057927 dropdb: could not connect to database template1: could not connect to server: Connection refused
+2017-01-07 15:52:38.057978 	Is the server running on host "localhost" (::1) and accepting
+2017-01-07 15:52:38.058065 	TCP/IP connections on port 5432?
+2017-01-07 15:52:38.058088 could not connect to server: Connection refused
+2017-01-07 15:52:38.058106 	Is the server running on host "localhost" (127.0.0.1) and accepting
+2017-01-07 15:52:38.058126 	TCP/IP connections on port 5432?
+2017-01-07 15:52:38.068103 createdb: could not connect to database template1: could not connect to server: Connection refused
+2017-01-07 15:52:38.068329 	Is the server running on host "localhost" (::1) and accepting
+2017-01-07 15:52:38.068356 	TCP/IP connections on port 5432?
+2017-01-07 15:52:38.068375 could not connect to server: Connection refused
+2017-01-07 15:52:38.068392 	Is the server running on host "localhost" (127.0.0.1) and accepting
+2017-01-07 15:52:38.068408 	TCP/IP connections on port 5432?

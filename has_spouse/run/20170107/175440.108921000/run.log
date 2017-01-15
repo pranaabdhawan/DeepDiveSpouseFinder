@@ -1,0 +1,56 @@
+2017-01-07 17:54:52.837819 # on Pranaabs-MacBook-Pro.local: deepdive do sentences
+2017-01-07 17:54:52.838047 # run/20170107/175440.108921000/plan.sh
+2017-01-07 17:54:52.838076 # execution plan for data/sentences
+2017-01-07 17:54:52.838098 
+2017-01-07 17:54:52.838122 : ## process/init/app ##########################################################
+2017-01-07 17:54:52.838145 : # Done: 2017-01-07T16:20:10-0500 (1h 34m 30s ago)
+2017-01-07 17:54:52.838165 : process/init/app/run.sh
+2017-01-07 17:54:52.838184 : mark_done process/init/app
+2017-01-07 17:54:52.838203 : ##############################################################################
+2017-01-07 17:54:52.838222 
+2017-01-07 17:54:52.838241 : ## process/init/relation/articles ############################################
+2017-01-07 17:54:52.838261 : # Done: 2017-01-07T17:23:09-0500 (31m 31s ago)
+2017-01-07 17:54:52.838280 : process/init/relation/articles/run.sh
+2017-01-07 17:54:52.838299 : mark_done process/init/relation/articles
+2017-01-07 17:54:52.838321 : ##############################################################################
+2017-01-07 17:54:52.838341 
+2017-01-07 17:54:52.838361 : ## data/articles #############################################################
+2017-01-07 17:54:52.838381 : # Done: 2017-01-07T17:23:09-0500 (31m 31s ago)
+2017-01-07 17:54:52.838405 : # no-op
+2017-01-07 17:54:52.838426 : mark_done data/articles
+2017-01-07 17:54:52.838450 : ##############################################################################
+2017-01-07 17:54:52.838471 
+2017-01-07 17:54:52.838491 ## process/ext_sentences_by_nlp_markup #######################################
+2017-01-07 17:54:52.838510 # Done: N/A
+2017-01-07 17:54:52.838529 process/ext_sentences_by_nlp_markup/run.sh
+2017-01-07 17:54:52.838548 ++ dirname process/ext_sentences_by_nlp_markup/run.sh
+2017-01-07 17:54:52.838567 + cd process/ext_sentences_by_nlp_markup
+2017-01-07 17:54:52.838585 + export DEEPDIVE_CURRENT_PROCESS_NAME=process/ext_sentences_by_nlp_markup
+2017-01-07 17:54:52.838604 + DEEPDIVE_CURRENT_PROCESS_NAME=process/ext_sentences_by_nlp_markup
+2017-01-07 17:54:52.838623 + export DEEPDIVE_LOAD_FORMAT=tsv
+2017-01-07 17:54:52.838641 + DEEPDIVE_LOAD_FORMAT=tsv
+2017-01-07 17:54:52.838660 + deepdive compute execute 'input_sql= SELECT R0.id AS "articles.R0.id", R0.content AS "articles.R0.content"
+2017-01-07 17:54:52.838679 FROM articles R0
+2017-01-07 17:54:52.838698         
+2017-01-07 17:54:52.838713           ' 'command="$DEEPDIVE_APP"/udf/nlp_markup.sh' output_relation=sentences
+2017-01-07 17:54:52.876359 Executing with the following configuration:
+2017-01-07 17:54:52.876423  DEEPDIVE_NUM_PROCESSES=3
+2017-01-07 17:54:52.876446  DEEPDIVE_NUM_PARALLEL_UNLOADS=1
+2017-01-07 17:54:52.876465  DEEPDIVE_NUM_PARALLEL_LOADS=1
+2017-01-07 17:54:52.876534  output_relation_tmp=dd_tmp_sentences
+2017-01-07 17:54:52.876561 
+2017-01-07 17:54:53.043868 CREATE TABLE
+2017-01-07 17:54:53.132566 CREATE TABLE
+2017-01-07 17:54:53.273402 unloading to feed_processes-1: ' SELECT R0.id AS "articles.R0.id", R0.content AS "articles.R0.content"
+2017-01-07 17:54:53.273465 FROM articles R0
+2017-01-07 17:54:53.273488         
+2017-01-07 17:54:53.273510           '
+2017-01-07 17:54:53.278315 bash: /Users/pranaab/Developer/Term3A/URA/spouseLocal/udf/nlp_markup.sh: Permission denied
+2017-01-07 17:54:53.278734 /Users/pranaab/local/util/compute-driver/local/compute-execute: line 140: kill: (77233) - No such process
+2017-01-07 17:54:53.285019 [ERROR] command='"$DEEPDIVE_APP"/udf/nlp_markup.sh': PID 77233: finished with non-zero exit status (0)
+2017-01-07 17:54:53.285314 /Users/pranaab/local/util/compute-driver/local/compute-execute: line 138: 77234 Terminated: 15          DEEPDIVE_CURRENT_PROCESS_INDEX=$i bash -c "$command" < process-$i.input > process-$i.output
+2017-01-07 17:54:53.285349 /Users/pranaab/local/util/compute-driver/local/compute-execute: line 138: 77235 Terminated: 15          DEEPDIVE_CURRENT_PROCESS_INDEX=$i bash -c "$command" < process-$i.input > process-$i.output
+2017-01-07 17:54:53.285370 /Users/pranaab/local/util/compute-driver/local/compute-execute: line 138: 77239 Terminated: 15          mkmimo process-*.output \> output_computed-*
+2017-01-07 17:54:53.285388 /Users/pranaab/local/util/compute-driver/local/compute-execute: line 138: 77240 Terminated: 15          deepdive-load "$output_relation_tmp" output_computed-*
+2017-01-07 17:54:53.285406 /Users/pranaab/local/util/compute-driver/local/compute-execute: line 138: 77246 Terminated: 15          deepdive-db unload "$input_sql" "$DEEPDIVE_LOAD_FORMAT" feed_processes-*
+2017-01-07 17:54:53.285424 /Users/pranaab/local/util/compute-driver/local/compute-execute: line 138: 77247 Terminated: 15          mkmimo feed_processes-* \> process-*.input

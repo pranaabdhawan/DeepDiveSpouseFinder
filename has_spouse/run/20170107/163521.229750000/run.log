@@ -1,0 +1,42 @@
+2017-01-07 16:35:26.906791 # on Pranaabs-MacBook-Pro.local: deepdive do sentences
+2017-01-07 16:35:26.907024 # run/20170107/163521.229750000/plan.sh
+2017-01-07 16:35:26.907053 # execution plan for data/sentences
+2017-01-07 16:35:26.907076 
+2017-01-07 16:35:26.907100 : ## process/init/app ##########################################################
+2017-01-07 16:35:26.907118 : # Done: 2017-01-07T16:20:10-0500 (15m 11s ago)
+2017-01-07 16:35:26.907136 : process/init/app/run.sh
+2017-01-07 16:35:26.907155 : mark_done process/init/app
+2017-01-07 16:35:26.907173 : ##############################################################################
+2017-01-07 16:35:26.907193 
+2017-01-07 16:35:26.907217 : ## process/init/relation/articles ############################################
+2017-01-07 16:35:26.907238 : # Done: 2017-01-07T16:20:10-0500 (15m 11s ago)
+2017-01-07 16:35:26.907259 : process/init/relation/articles/run.sh
+2017-01-07 16:35:26.907284 : mark_done process/init/relation/articles
+2017-01-07 16:35:26.907306 : ##############################################################################
+2017-01-07 16:35:26.907329 
+2017-01-07 16:35:26.907351 : ## data/articles #############################################################
+2017-01-07 16:35:26.907376 : # Done: 2017-01-07T16:20:10-0500 (15m 11s ago)
+2017-01-07 16:35:26.907399 : # no-op
+2017-01-07 16:35:26.907418 : mark_done data/articles
+2017-01-07 16:35:26.907438 : ##############################################################################
+2017-01-07 16:35:26.907457 
+2017-01-07 16:35:26.907476 ## process/ext_sentences_by_nlp_markup #######################################
+2017-01-07 16:35:26.907495 # Done: N/A
+2017-01-07 16:35:26.907514 process/ext_sentences_by_nlp_markup/run.sh
+2017-01-07 16:35:26.907534 ++ dirname process/ext_sentences_by_nlp_markup/run.sh
+2017-01-07 16:35:26.907553 + cd process/ext_sentences_by_nlp_markup
+2017-01-07 16:35:26.907572 + export DEEPDIVE_CURRENT_PROCESS_NAME=process/ext_sentences_by_nlp_markup
+2017-01-07 16:35:26.907591 + DEEPDIVE_CURRENT_PROCESS_NAME=process/ext_sentences_by_nlp_markup
+2017-01-07 16:35:26.907610 + export DEEPDIVE_LOAD_FORMAT=tsv
+2017-01-07 16:35:26.907629 + DEEPDIVE_LOAD_FORMAT=tsv
+2017-01-07 16:35:26.907645 + deepdive compute execute 'input_sql= SELECT R0.id AS "articles.R0.id", R0.content AS "articles.R0.content"
+2017-01-07 16:35:26.907658 FROM articles R0
+2017-01-07 16:35:26.907670         
+2017-01-07 16:35:26.907682           ' 'command="$DEEPDIVE_APP"/udf/nlp_markup.sh' output_relation=sentences
+2017-01-07 16:35:26.941221 Executing with the following configuration:
+2017-01-07 16:35:26.941281  DEEPDIVE_NUM_PROCESSES=3
+2017-01-07 16:35:26.941305  DEEPDIVE_NUM_PARALLEL_UNLOADS=1
+2017-01-07 16:35:26.941326  DEEPDIVE_NUM_PARALLEL_LOADS=1
+2017-01-07 16:35:26.941395  output_relation_tmp=dd_tmp_sentences
+2017-01-07 16:35:26.941421 
+2017-01-07 16:35:27.094835 psql: FATAL:  role "root" does not exist

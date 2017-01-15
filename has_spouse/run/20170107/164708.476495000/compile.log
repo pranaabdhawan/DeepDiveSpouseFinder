@@ -1,0 +1,38 @@
+2017-01-07 16:47:08.528963 ‘run/LATEST.COMPILE’ -> ‘20170107/164708.476495000’
+2017-01-07 16:47:08.533209 ‘run/RUNNING.COMPILE’ -> ‘20170107/164708.476495000’
+2017-01-07 16:47:08.533252 Parsing DeepDive application (/Users/pranaab/Developer/Term3A/URA/spouseLocal) to generate:
+2017-01-07 16:47:08.533275  run/compiled/schema.json
+2017-01-07 16:47:08.533295   from app.ddlog
+2017-01-07 16:47:08.921996  run/compiled/deepdive.conf
+2017-01-07 16:47:08.922129   from app.ddlog
+2017-01-07 16:47:09.390048  run/compiled/deepdive.conf.json
+2017-01-07 16:47:09.671343 Performing sanity checks on run/compiled/deepdive.conf.json:
+2017-01-07 16:47:09.712791  checking if input_extractors_well_defined
+2017-01-07 16:47:09.712837  checking if input_schema_wellformed
+2017-01-07 16:47:09.713122 Normalizing and adding built-in processes to the data flow to compile:
+2017-01-07 16:47:09.713527  run/compiled/config-0.00-init_objects.json
+2017-01-07 16:47:09.729475  run/compiled/config-0.01-parse_calibration.json
+2017-01-07 16:47:09.743079  run/compiled/config-0.01-parse_schema.json
+2017-01-07 16:47:09.760351  run/compiled/config-0.51-add_init_app.json
+2017-01-07 16:47:09.772786  run/compiled/config-0.52-input_loader.json
+2017-01-07 16:47:09.786833  run/compiled/config-1.00-qualified_names.json
+2017-01-07 16:47:09.801956  run/compiled/config-1.01-parse_inference_rules.json
+2017-01-07 16:47:09.827732  run/compiled/config-2.01-grounding.json
+2017-01-07 16:47:09.884462  run/compiled/config-2.02-learning_inference.json
+2017-01-07 16:47:09.900385  run/compiled/config-2.03-calibration_plots.json
+2017-01-07 16:47:09.913896  run/compiled/config-9.98-ensure_init_app.json
+2017-01-07 16:47:09.927248  run/compiled/config-9.99-dependencies.json
+2017-01-07 16:47:09.941037  run/compiled/config.json
+2017-01-07 16:47:09.944031 Validating run/compiled/config.json:
+2017-01-07 16:47:10.009012  checking if compiled_base_relations_have_input_data
+2017-01-07 16:47:10.009072  checking if compiled_dependencies_correct
+2017-01-07 16:47:10.009093  checking if compiled_input_output_well_defined
+2017-01-07 16:47:10.009111  checking if compiled_output_uniquely_defined
+2017-01-07 16:47:10.009344 Compiling executable code into:
+2017-01-07 16:47:10.009621  run/compiled/code-Makefile.json
+2017-01-07 16:47:10.026519  run/compiled/code-cmd_extractor.json
+2017-01-07 16:47:10.042105  run/compiled/code-dataflow_dot.json
+2017-01-07 16:47:10.058800  run/compiled/code-sql_extractor.json
+2017-01-07 16:47:10.073094  run/compiled/code-tsv_extractor.json
+2017-01-07 16:47:10.095011 ‘run/compiled’ -> ‘run/compiled~’
+2017-01-07 16:47:10.101589 ‘run/compiled’ -> ‘20170107/164708.476495000’

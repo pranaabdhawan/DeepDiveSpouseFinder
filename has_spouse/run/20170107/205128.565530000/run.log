@@ -1,0 +1,31 @@
+2017-01-07 20:51:32.054854 # on Pranaabs-MacBook-Pro.local: deepdive do sentences
+2017-01-07 20:51:32.055083 # run/20170107/205128.565530000/plan.sh
+2017-01-07 20:51:32.055112 # execution plan for data/sentences
+2017-01-07 20:51:32.055134 
+2017-01-07 20:51:32.055157 : ## process/init/app ##########################################################
+2017-01-07 20:51:32.055175 : # Done: 2017-01-07T16:20:10-0500 (4h 31m 18s ago)
+2017-01-07 20:51:32.055192 : process/init/app/run.sh
+2017-01-07 20:51:32.055210 : mark_done process/init/app
+2017-01-07 20:51:32.055228 : ##############################################################################
+2017-01-07 20:51:32.055246 
+2017-01-07 20:51:32.055268 ## process/init/relation/sentences ###########################################
+2017-01-07 20:51:32.055289 # Done: N/A
+2017-01-07 20:51:32.055309 process/init/relation/sentences/run.sh
+2017-01-07 20:51:32.055332 ++ dirname process/init/relation/sentences/run.sh
+2017-01-07 20:51:32.055353 + cd process/init/relation/sentences
+2017-01-07 20:51:32.055375 + export DEEPDIVE_CURRENT_PROCESS_NAME=process/init/relation/sentences
+2017-01-07 20:51:32.055397 + DEEPDIVE_CURRENT_PROCESS_NAME=process/init/relation/sentences
+2017-01-07 20:51:32.055420 + deepdive create table sentences
+2017-01-07 20:51:32.178502 CREATE TABLE
+2017-01-07 20:51:32.179443 + deepdive load sentences
+2017-01-07 20:51:32.255852 Loading sentences from input/sentences.tsv (tsv format)
+2017-01-07 20:51:32.364787 COPY 0
+2017-01-07 20:51:32.372513 mark_done process/init/relation/sentences
+2017-01-07 20:51:32.388287 ##############################################################################
+2017-01-07 20:51:32.388345 
+2017-01-07 20:51:32.388369 ## data/sentences ############################################################
+2017-01-07 20:51:32.388391 # Done: N/A
+2017-01-07 20:51:32.388415 # no-op
+2017-01-07 20:51:32.388436 mark_done data/sentences
+2017-01-07 20:51:32.402549 ##############################################################################
+2017-01-07 20:51:32.402601 

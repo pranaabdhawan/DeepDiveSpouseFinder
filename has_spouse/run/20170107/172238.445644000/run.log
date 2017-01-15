@@ -1,0 +1,19 @@
+2017-01-07 17:22:41.831072 # on Pranaabs-MacBook-Pro.local: deepdive do articles
+2017-01-07 17:22:41.831326 # run/20170107/172238.445644000/plan.sh
+2017-01-07 17:22:41.831358 # execution plan for data/articles
+2017-01-07 17:22:41.831381 
+2017-01-07 17:22:41.831404 : ## process/init/app ##########################################################
+2017-01-07 17:22:41.831422 : # Done: 2017-01-07T16:20:10-0500 (1h 2m 28s ago)
+2017-01-07 17:22:41.831443 : process/init/app/run.sh
+2017-01-07 17:22:41.831463 : mark_done process/init/app
+2017-01-07 17:22:41.831481 : ##############################################################################
+2017-01-07 17:22:41.831501 
+2017-01-07 17:22:41.831521 ## process/init/relation/articles ############################################
+2017-01-07 17:22:41.831540 # Done: 2017-01-07T16:20:10-0500 (1h 2m 28s ago)
+2017-01-07 17:22:41.831561 process/init/relation/articles/run.sh
+2017-01-07 17:22:41.831581 ++ dirname process/init/relation/articles/run.sh
+2017-01-07 17:22:41.831601 + cd process/init/relation/articles
+2017-01-07 17:22:41.831621 + export DEEPDIVE_CURRENT_PROCESS_NAME=process/init/relation/articles
+2017-01-07 17:22:41.831640 + DEEPDIVE_CURRENT_PROCESS_NAME=process/init/relation/articles
+2017-01-07 17:22:41.831660 + deepdive create table articles
+2017-01-07 17:22:41.939466 psql: FATAL:  database "deepdive_local_pranaab" does not exist

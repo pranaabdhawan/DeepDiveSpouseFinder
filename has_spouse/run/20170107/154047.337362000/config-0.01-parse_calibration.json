@@ -1,0 +1,89 @@
+{
+  "deepdive": {
+    "db": {
+      "default": {
+        "dbname": "deepdive_spouse_pranaab",
+        "driver": "org.postgresql.Driver",
+        "host": "Pranaabs-MacBook-Pro.local",
+        "incremental_mode": "ORIGINAL",
+        "password": "",
+        "port": "5432",
+        "url": "jdbc:postgresql://Pranaabs-MacBook-Pro.local:5432/deepdive_spouse_pranaab",
+        "user": "pranaab"
+      }
+    },
+    "pipeline": {
+      "run": ""
+    },
+    "sampler": {
+      "sampler_args": "-l 1000 -s 1 -i 1000 --alpha 0.01 --sample_evidence",
+      "sampler_cmd": "sampler-dw"
+    },
+    "schema": {
+      "relations": {
+        "articles": {
+          "columns": {
+            "content": {
+              "index": 1,
+              "type": "text"
+            },
+            "id": {
+              "index": 0,
+              "type": "text"
+            }
+          }
+        }
+      },
+      "variables": {}
+    }
+  },
+  "deepdive_": {
+    "db": {
+      "default": {
+        "dbname": "deepdive_spouse_pranaab",
+        "driver": "org.postgresql.Driver",
+        "host": "Pranaabs-MacBook-Pro.local",
+        "incremental_mode": "ORIGINAL",
+        "password": "",
+        "port": "5432",
+        "url": "jdbc:postgresql://Pranaabs-MacBook-Pro.local:5432/deepdive_spouse_pranaab",
+        "user": "pranaab"
+      }
+    },
+    "pipeline": {
+      "run": "",
+      "pipelines": {}
+    },
+    "sampler": {
+      "sampler_args": "-l 1000 -s 1 -i 1000 --alpha 0.01 --sample_evidence",
+      "sampler_cmd": "sampler-dw"
+    },
+    "schema": {
+      "relations": {
+        "articles": {
+          "columns": {
+            "content": {
+              "index": 1,
+              "type": "text"
+            },
+            "id": {
+              "index": 0,
+              "type": "text"
+            }
+          }
+        }
+      },
+      "variables": {}
+    },
+    "extraction": {
+      "extractors": {}
+    },
+    "inference": {
+      "factors": {}
+    },
+    "execution": {
+      "processes": {}
+    },
+    "calibration": null
+  }
+}

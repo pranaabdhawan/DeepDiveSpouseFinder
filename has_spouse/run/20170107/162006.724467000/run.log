@@ -1,0 +1,51 @@
+2017-01-07 16:20:10.061552 # on Pranaabs-MacBook-Pro.local: deepdive do articles
+2017-01-07 16:20:10.061821 # run/20170107/162006.724467000/plan.sh
+2017-01-07 16:20:10.061849 # execution plan for data/articles
+2017-01-07 16:20:10.061871 
+2017-01-07 16:20:10.061893 ## process/init/app ##########################################################
+2017-01-07 16:20:10.061912 # Done: N/A
+2017-01-07 16:20:10.061930 process/init/app/run.sh
+2017-01-07 16:20:10.061949 ++ dirname process/init/app/run.sh
+2017-01-07 16:20:10.061967 + cd process/init/app
+2017-01-07 16:20:10.061986 + export DEEPDIVE_CURRENT_PROCESS_NAME=process/init/app
+2017-01-07 16:20:10.062009 + DEEPDIVE_CURRENT_PROCESS_NAME=process/init/app
+2017-01-07 16:20:10.062029 + deepdive db init
+2017-01-07 16:20:10.087269 dropdb: database removal failed: ERROR:  database "deepdive_spouse_pranaab" does not exist
+2017-01-07 16:20:10.350915 + cd /Users/pranaab/Developer/Term3A/URA/spouseLocal
+2017-01-07 16:20:10.351121 + [[ -r schema.sql ]]
+2017-01-07 16:20:10.351310 + [[ -x input/init.sh ]]
+2017-01-07 16:20:10.351804 mark_done process/init/app
+2017-01-07 16:20:10.372786 ##############################################################################
+2017-01-07 16:20:10.372862 
+2017-01-07 16:20:10.372889 ## process/init/relation/articles ############################################
+2017-01-07 16:20:10.372910 # Done: N/A
+2017-01-07 16:20:10.372930 process/init/relation/articles/run.sh
+2017-01-07 16:20:10.379289 ++ dirname process/init/relation/articles/run.sh
+2017-01-07 16:20:10.382345 + cd process/init/relation/articles
+2017-01-07 16:20:10.382467 + export DEEPDIVE_CURRENT_PROCESS_NAME=process/init/relation/articles
+2017-01-07 16:20:10.382505 + DEEPDIVE_CURRENT_PROCESS_NAME=process/init/relation/articles
+2017-01-07 16:20:10.382532 + deepdive create table articles
+2017-01-07 16:20:10.523670 NOTICE:  table "articles" does not exist, skipping
+2017-01-07 16:20:10.527339 CREATE TABLE
+2017-01-07 16:20:10.528231 + deepdive load articles
+2017-01-07 16:20:10.603641 Loading articles from input/articles.tsv.sh (tsv format)
+2017-01-07 16:20:10.613050 ERROR: Missing /Users/pranaab/Developer/Term3A/URA/spouseLocal/input/signalmedia/signalmedia-1m.jsonl
+2017-01-07 16:20:10.613134 # Please Download it from http://research.signalmedia.co/newsir16/signal-dataset.html
+2017-01-07 16:20:10.613159 
+2017-01-07 16:20:10.613180 # Alternatively, use our sampled data by running:
+2017-01-07 16:20:10.613200 deepdive load articles input/articles-100.tsv.bz2
+2017-01-07 16:20:10.613220 
+2017-01-07 16:20:10.613241 # Or, skipping all NLP markup processes by running:
+2017-01-07 16:20:10.613262 deepdive create table sentences
+2017-01-07 16:20:10.613282 deepdive load sentences
+2017-01-07 16:20:10.613302 deepdive mark done sentences
+2017-01-07 16:20:10.712257 COPY 0
+2017-01-07 16:20:10.723661 mark_done process/init/relation/articles
+2017-01-07 16:20:10.739639 ##############################################################################
+2017-01-07 16:20:10.739710 
+2017-01-07 16:20:10.739736 ## data/articles #############################################################
+2017-01-07 16:20:10.739757 # Done: N/A
+2017-01-07 16:20:10.739778 # no-op
+2017-01-07 16:20:10.739799 mark_done data/articles
+2017-01-07 16:20:10.756013 ##############################################################################
+2017-01-07 16:20:10.756076 

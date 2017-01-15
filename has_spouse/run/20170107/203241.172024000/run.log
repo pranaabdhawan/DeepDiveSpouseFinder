@@ -1,0 +1,23 @@
+2017-01-07 20:32:43.978633 # on Pranaabs-MacBook-Pro.local: deepdive do sentences
+2017-01-07 20:32:43.978844 # run/20170107/203241.172024000/plan.sh
+2017-01-07 20:32:43.978870 # execution plan for data/sentences
+2017-01-07 20:32:43.978890 
+2017-01-07 20:32:43.978911 : ## process/init/app ##########################################################
+2017-01-07 20:32:43.978928 : # Done: 2017-01-07T16:20:10-0500 (4h 12m 31s ago)
+2017-01-07 20:32:43.978944 : process/init/app/run.sh
+2017-01-07 20:32:43.978961 : mark_done process/init/app
+2017-01-07 20:32:43.978978 : ##############################################################################
+2017-01-07 20:32:43.978998 
+2017-01-07 20:32:43.979018 ## process/init/relation/sentences ###########################################
+2017-01-07 20:32:43.979037 # Done: N/A
+2017-01-07 20:32:43.979058 process/init/relation/sentences/run.sh
+2017-01-07 20:32:43.979077 ++ dirname process/init/relation/sentences/run.sh
+2017-01-07 20:32:43.979095 + cd process/init/relation/sentences
+2017-01-07 20:32:43.979112 + export DEEPDIVE_CURRENT_PROCESS_NAME=process/init/relation/sentences
+2017-01-07 20:32:43.979129 + DEEPDIVE_CURRENT_PROCESS_NAME=process/init/relation/sentences
+2017-01-07 20:32:43.979146 + deepdive create table sentences
+2017-01-07 20:32:44.082488 CREATE TABLE
+2017-01-07 20:32:44.083410 + deepdive load sentences
+2017-01-07 20:32:44.162868 Loading sentences from input/sentences.tsv (tsv format)
+2017-01-07 20:32:44.459902 ERROR:  invalid input syntax for integer: "nn"
+2017-01-07 20:32:44.460078 CONTEXT:  COPY sentences, line 1, column doc_offsets: "{"nn","nn","nn","nsubj","null","null","dep","null","null","null","det","amod","appos","null","conj_a..."

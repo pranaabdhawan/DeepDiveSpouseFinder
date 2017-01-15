@@ -1,0 +1,9 @@
+2017-01-08 09:10:11.455088 ‘run/LATEST.COMPILE’ -> ‘20170108/091011.355702000’
+2017-01-08 09:10:11.455357 ‘run/RUNNING.COMPILE’ -> ‘20170108/091011.355702000’
+2017-01-08 09:10:11.455374 Parsing DeepDive application (/Users/pranaab/Developer/Term3A/URA/spouseLocal) to generate:
+2017-01-08 09:10:11.455389  run/compiled/schema.json
+2017-01-08 09:10:11.455404   from app.ddlog
+2017-01-08 09:10:11.941836 [error] app.ddlog[130.60] failure: `.' expected but end of source found
+2017-01-08 09:10:11.941900 
+2017-01-08 09:10:11.941923 has_spouse(p1, p2) = NULL :- spouse_candidate(p1, _, p2, _)
+2017-01-08 09:10:11.941946                                                            ^

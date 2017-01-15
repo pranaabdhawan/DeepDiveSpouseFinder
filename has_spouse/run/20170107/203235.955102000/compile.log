@@ -1,0 +1,48 @@
+2017-01-07 20:32:36.017125 ‘run/LATEST.COMPILE’ -> ‘20170107/203235.955102000’
+2017-01-07 20:32:36.017611 ‘run/RUNNING.COMPILE’ -> ‘20170107/203235.955102000’
+2017-01-07 20:32:36.017683 Parsing DeepDive application (/Users/pranaab/Developer/Term3A/URA/spouseLocal) to generate:
+2017-01-07 20:32:36.017751  run/compiled/schema.json
+2017-01-07 20:32:36.017803   from app.ddlog
+2017-01-07 20:32:36.396251  run/compiled/deepdive.conf
+2017-01-07 20:32:36.396404   from app.ddlog
+2017-01-07 20:32:36.818245   from deepdive.conf
+2017-01-07 20:32:36.826505  run/compiled/deepdive.conf.json
+2017-01-07 20:32:37.150427 Performing sanity checks on run/compiled/deepdive.conf.json:
+2017-01-07 20:32:37.190881  checking if input_extractors_well_defined
+2017-01-07 20:32:37.190943  checking if input_schema_wellformed
+2017-01-07 20:32:37.191284 Normalizing and adding built-in processes to the data flow to compile:
+2017-01-07 20:32:37.192026  run/compiled/config-0.00-init_objects.json
+2017-01-07 20:32:37.205106  run/compiled/config-0.01-parse_calibration.json
+2017-01-07 20:32:37.219869  run/compiled/config-0.01-parse_schema.json
+2017-01-07 20:32:37.236546  run/compiled/config-0.51-add_init_app.json
+2017-01-07 20:32:37.248211  run/compiled/config-0.52-input_loader.json
+2017-01-07 20:32:37.261509  run/compiled/config-1.00-qualified_names.json
+2017-01-07 20:32:37.279122  run/compiled/config-1.01-parse_inference_rules.json
+2017-01-07 20:32:37.307878  run/compiled/config-2.01-grounding.json
+2017-01-07 20:32:37.367266  run/compiled/config-2.02-learning_inference.json
+2017-01-07 20:32:37.390619  run/compiled/config-2.03-calibration_plots.json
+2017-01-07 20:32:37.407360  run/compiled/config-9.98-ensure_init_app.json
+2017-01-07 20:32:37.420204  run/compiled/config-9.99-dependencies.json
+2017-01-07 20:32:37.433371  run/compiled/config.json
+2017-01-07 20:32:37.436052 Validating run/compiled/config.json:
+2017-01-07 20:32:37.508006  checking if compiled_base_relations_have_input_data
+2017-01-07 20:32:37.508121  checking if compiled_dependencies_correct
+2017-01-07 20:32:37.508171  checking if compiled_input_output_well_defined
+2017-01-07 20:32:37.508211  checking if compiled_output_uniquely_defined
+2017-01-07 20:32:37.508724 Compiling executable code into:
+2017-01-07 20:32:37.509221  run/compiled/code-Makefile.json
+2017-01-07 20:32:37.528337  run/compiled/code-cmd_extractor.json
+2017-01-07 20:32:37.541532  run/compiled/code-dataflow_dot.json
+2017-01-07 20:32:37.557851  run/compiled/code-sql_extractor.json
+2017-01-07 20:32:37.573808  run/compiled/code-tsv_extractor.json
+2017-01-07 20:32:37.596512 Generating files:
+2017-01-07 20:32:37.625377  run/Makefile
+2017-01-07 20:32:37.639803  run/process/init/app/run.sh
+2017-01-07 20:32:37.653193  run/process/init/relation/articles/run.sh
+2017-01-07 20:32:37.666567  run/process/init/relation/sentences/run.sh
+2017-01-07 20:32:37.677598  run/dataflow.dot
+2017-01-07 20:32:37.716677 Warning: Could not load "/Users/pranaab/local/lib/bundled/graphviz/prefix/bin/../lib/graphviz/libgvplugin_pango.6.dylib" - file not found
+2017-01-07 20:32:37.725412  run/dataflow.svg
+2017-01-07 20:32:37.726436   (file:///Users/pranaab/Developer/Term3A/URA/spouseLocal/run/dataflow.svg)
+2017-01-07 20:32:37.729239 ‘run/compiled’ -> ‘run/compiled~’
+2017-01-07 20:32:37.734312 ‘run/compiled’ -> ‘20170107/203235.955102000’

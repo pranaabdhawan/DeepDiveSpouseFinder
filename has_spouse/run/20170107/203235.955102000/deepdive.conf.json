@@ -1,0 +1,88 @@
+{
+    "deepdive" : {
+        "calibration" : {
+            "holdout_fraction" : 0.25
+        },
+        "db" : {
+            "default" : {
+                "dbname" : "deepdive_spouse_pranaab",
+                "driver" : "org.postgresql.Driver",
+                "host" : "localhost",
+                "incremental_mode" : "ORIGINAL",
+                "password" : "",
+                "port" : "5432",
+                "url" : "jdbc:postgresql://localhost:5432/deepdive_spouse_pranaab",
+                "user" : "pranaab"
+            }
+        },
+        "pipeline" : {
+            "run" : ""
+        },
+        "sampler" : {
+            "sampler_args" : "-l 1000 -s 1 -i 1000 --alpha 0.01 --sample_evidence",
+            "sampler_cmd" : "sampler-dw"
+        },
+        "schema" : {
+            "relations" : {
+                "articles" : {
+                    "columns" : {
+                        "content" : {
+                            "index" : 1,
+                            "type" : "text"
+                        },
+                        "id" : {
+                            "index" : 0,
+                            "type" : "text"
+                        }
+                    }
+                },
+                "sentences" : {
+                    "columns" : {
+                        "dep_tokens" : {
+                            "index" : 9,
+                            "type" : "int[]"
+                        },
+                        "dep_types" : {
+                            "index" : 8,
+                            "type" : "text[]"
+                        },
+                        "doc_id" : {
+                            "index" : 0,
+                            "type" : "text"
+                        },
+                        "doc_offsets" : {
+                            "index" : 7,
+                            "type" : "int[]"
+                        },
+                        "lemmas" : {
+                            "index" : 4,
+                            "type" : "text[]"
+                        },
+                        "ner_tags" : {
+                            "index" : 6,
+                            "type" : "text[]"
+                        },
+                        "pos_tags" : {
+                            "index" : 5,
+                            "type" : "text[]"
+                        },
+                        "sentence_index" : {
+                            "index" : 1,
+                            "type" : "int"
+                        },
+                        "sentence_text" : {
+                            "index" : 2,
+                            "type" : "text"
+                        },
+                        "tokens" : {
+                            "index" : 3,
+                            "type" : "text[]"
+                        }
+                    }
+                }
+            },
+            "variables" : {}
+        }
+    }
+}
+

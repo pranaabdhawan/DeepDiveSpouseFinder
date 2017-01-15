@@ -1,0 +1,64 @@
+2017-01-07 21:11:33.633179 # on Pranaabs-MacBook-Pro.local: deepdive do person_mention
+2017-01-07 21:11:33.633401 # run/20170107/211130.578242000/plan.sh
+2017-01-07 21:11:33.633428 # execution plan for data/person_mention
+2017-01-07 21:11:33.633449 
+2017-01-07 21:11:33.633471 : ## process/init/app ##########################################################
+2017-01-07 21:11:33.633489 : # Done: 2017-01-07T16:20:10-0500 (4h 51m 20s ago)
+2017-01-07 21:11:33.633505 : process/init/app/run.sh
+2017-01-07 21:11:33.633523 : mark_done process/init/app
+2017-01-07 21:11:33.633540 : ##############################################################################
+2017-01-07 21:11:33.633558 
+2017-01-07 21:11:33.633580 : ## process/init/relation/sentences ###########################################
+2017-01-07 21:11:33.633600 : # Done: 2017-01-07T20:56:10-0500 (15m 20s ago)
+2017-01-07 21:11:33.633619 : process/init/relation/sentences/run.sh
+2017-01-07 21:11:33.633642 : mark_done process/init/relation/sentences
+2017-01-07 21:11:33.633663 : ##############################################################################
+2017-01-07 21:11:33.633686 
+2017-01-07 21:11:33.633707 : ## data/sentences ############################################################
+2017-01-07 21:11:33.633730 : # Done: 2017-01-07T20:56:10-0500 (15m 20s ago)
+2017-01-07 21:11:33.633752 : # no-op
+2017-01-07 21:11:33.633770 : mark_done data/sentences
+2017-01-07 21:11:33.633788 : ##############################################################################
+2017-01-07 21:11:33.633806 
+2017-01-07 21:11:33.633825 ## process/ext_person_mention_by_map_person_mention ##########################
+2017-01-07 21:11:33.633842 # Done: N/A
+2017-01-07 21:11:33.633861 process/ext_person_mention_by_map_person_mention/run.sh
+2017-01-07 21:11:33.633878 ++ dirname process/ext_person_mention_by_map_person_mention/run.sh
+2017-01-07 21:11:33.633896 + cd process/ext_person_mention_by_map_person_mention
+2017-01-07 21:11:33.633914 + export DEEPDIVE_CURRENT_PROCESS_NAME=process/ext_person_mention_by_map_person_mention
+2017-01-07 21:11:33.633932 + DEEPDIVE_CURRENT_PROCESS_NAME=process/ext_person_mention_by_map_person_mention
+2017-01-07 21:11:33.633951 + export DEEPDIVE_LOAD_FORMAT=tsv
+2017-01-07 21:11:33.633965 + DEEPDIVE_LOAD_FORMAT=tsv
+2017-01-07 21:11:33.633978 + deepdive compute execute 'input_sql= SELECT R0.doc_id AS "sentences.R0.doc_id", R0.sentence_index AS "sentences.R0.sentence_index", R0.tokens AS "sentences.R0.tokens", R0.ner_tags AS "sentences.R0.ner_tags"
+2017-01-07 21:11:33.633989 FROM sentences R0
+2017-01-07 21:11:33.634000         
+2017-01-07 21:11:33.634012           ' 'command="$DEEPDIVE_APP"/udf/map_person_mention.py' output_relation=person_mention
+2017-01-07 21:11:33.667440 Executing with the following configuration:
+2017-01-07 21:11:33.667505  DEEPDIVE_NUM_PROCESSES=3
+2017-01-07 21:11:33.667528  DEEPDIVE_NUM_PARALLEL_UNLOADS=1
+2017-01-07 21:11:33.667548  DEEPDIVE_NUM_PARALLEL_LOADS=1
+2017-01-07 21:11:33.667614  output_relation_tmp=dd_tmp_person_mention
+2017-01-07 21:11:33.667640 
+2017-01-07 21:11:33.865926 CREATE TABLE
+2017-01-07 21:11:33.948260 CREATE TABLE
+2017-01-07 21:11:34.093615 unloading to feed_processes-1: ' SELECT R0.doc_id AS "sentences.R0.doc_id", R0.sentence_index AS "sentences.R0.sentence_index", R0.tokens AS "sentences.R0.tokens", R0.ner_tags AS "sentences.R0.ner_tags"
+2017-01-07 21:11:34.093695 FROM sentences R0
+2017-01-07 21:11:34.093720         
+2017-01-07 21:11:34.093744           '
+2017-01-07 21:11:34.121580 Loading dd_tmp_person_mention from output_computed-1 (tsv format)
+2017-01-07 21:11:40.463281 COPY 48813
+2017-01-07 21:11:40.469166 Replacing person_mention with dd_tmp_person_mention
+2017-01-07 21:11:40.522661 DROP TABLE
+2017-01-07 21:11:40.582069 ALTER TABLE
+2017-01-07 21:11:40.645006 ALTER TABLE
+2017-01-07 21:11:40.713233 DROP TABLE
+2017-01-07 21:11:42.222105 ANALYZE
+2017-01-07 21:11:42.227327 mark_done process/ext_person_mention_by_map_person_mention
+2017-01-07 21:11:42.242908 ##############################################################################
+2017-01-07 21:11:42.243011 
+2017-01-07 21:11:42.243039 ## data/person_mention #######################################################
+2017-01-07 21:11:42.243057 # Done: N/A
+2017-01-07 21:11:42.243077 # no-op
+2017-01-07 21:11:42.243095 mark_done data/person_mention
+2017-01-07 21:11:42.257281 ##############################################################################
+2017-01-07 21:11:42.257347 

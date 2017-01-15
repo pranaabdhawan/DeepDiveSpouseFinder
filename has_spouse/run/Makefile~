@@ -1,0 +1,229 @@
+
+# default commands
+define CMD_data
+# no-op
+endef
+define CMD_pipeline
+# no-op
+endef
+define CMD_process
+# no-op
+endef
+define CMD_factor
+# no-op
+endef
+define TOUCH
+endef
+define RESET
+rm -f
+endef
+
+.DEFAULT: help
+help:
+	@echo make list
+	@echo make list-targets
+	@echo make all
+	@echo make reset
+list:
+	@printf "%s\n" 'data/articles' 'data/has_spouse' 'data/num_people' 'data/person_mention' 'data/sentences' 'data/spouse_candidate' 'data/spouse_feature' 'data/spouse_label' 'data/spouse_label_resolved' 'process/ext_has_spouse' 'process/ext_num_people' 'process/ext_person_mention_by_map_person_mention' 'process/ext_spouse_candidate' 'process/ext_spouse_feature_by_extract_spouse_features' 'process/ext_spouse_label_by_supervise' 'process/ext_spouse_label_resolved' 'process/init/app' 'process/init/relation/articles' 'process/init/relation/sentences'
+list-targets:
+	@printf "make %s\n" 'data/articles.done' 'data/has_spouse.done' 'data/num_people.done' 'data/person_mention.done' 'data/sentences.done' 'data/spouse_candidate.done' 'data/spouse_feature.done' 'data/spouse_label.done' 'data/spouse_label_resolved.done' 'process/ext_has_spouse.done' 'process/ext_num_people.done' 'process/ext_person_mention_by_map_person_mention.done' 'process/ext_spouse_candidate.done' 'process/ext_spouse_feature_by_extract_spouse_features.done' 'process/ext_spouse_label_by_supervise.done' 'process/ext_spouse_label_resolved.done' 'process/init/app.done' 'process/init/relation/articles.done' 'process/init/relation/sentences.done'
+	@echo "make     FOO.reset       # resets  FOO.done"
+	@echo "make -tB FOO.done        # assumes FOO.done"
+	@echo "make TOUCH=    FOO.done  # shows what still needs to run to get FOO.done"
+	@echo "make TOUCH= -B FOO.done  # shows everything that needs to run to get FOO.done"
+all: data/articles.done data/has_spouse.done data/num_people.done data/person_mention.done data/sentences.done data/spouse_candidate.done data/spouse_feature.done data/spouse_label.done data/spouse_label_resolved.done process/ext_has_spouse.done process/ext_num_people.done process/ext_person_mention_by_map_person_mention.done process/ext_spouse_candidate.done process/ext_spouse_feature_by_extract_spouse_features.done process/ext_spouse_label_by_supervise.done process/ext_spouse_label_resolved.done process/init/app.done process/init/relation/articles.done process/init/relation/sentences.done
+reset: data/articles.reset data/has_spouse.reset data/num_people.reset data/person_mention.reset data/sentences.reset data/spouse_candidate.reset data/spouse_feature.reset data/spouse_label.reset data/spouse_label_resolved.reset process/ext_has_spouse.reset process/ext_num_people.reset process/ext_person_mention_by_map_person_mention.reset process/ext_spouse_candidate.reset process/ext_spouse_feature_by_extract_spouse_features.reset process/ext_spouse_label_by_supervise.reset process/ext_spouse_label_resolved.reset process/init/app.reset process/init/relation/articles.reset process/init/relation/sentences.reset
+.PHONY: help list list-targets all reset %.reset
+
+
+process/init/app.done: 
+	## process/init/app ##########################################################
+	# Done: $(shell format_timestamp $@ $@~ 2>/dev/null)
+	$(CMD_process)
+	$(TOUCH)
+	##############################################################################
+
+process/init/app.reset:
+	$(RESET) process/init/app.done
+
+process/init/relation/articles.done: process/init/app.done
+	## process/init/relation/articles ############################################
+	# Done: $(shell format_timestamp $@ $@~ 2>/dev/null)
+	$(CMD_process)
+	$(TOUCH)
+	##############################################################################
+
+process/init/relation/articles.reset:
+	$(RESET) process/init/relation/articles.done
+
+process/init/relation/sentences.done: process/init/app.done
+	## process/init/relation/sentences ###########################################
+	# Done: $(shell format_timestamp $@ $@~ 2>/dev/null)
+	$(CMD_process)
+	$(TOUCH)
+	##############################################################################
+
+process/init/relation/sentences.reset:
+	$(RESET) process/init/relation/sentences.done
+
+process/ext_has_spouse.done: data/spouse_label_resolved.done
+	## process/ext_has_spouse ####################################################
+	# Done: $(shell format_timestamp $@ $@~ 2>/dev/null)
+	$(CMD_process)
+	$(TOUCH)
+	##############################################################################
+
+process/ext_has_spouse.reset:
+	$(RESET) process/ext_has_spouse.done
+
+process/ext_num_people.done: data/person_mention.done
+	## process/ext_num_people ####################################################
+	# Done: $(shell format_timestamp $@ $@~ 2>/dev/null)
+	$(CMD_process)
+	$(TOUCH)
+	##############################################################################
+
+process/ext_num_people.reset:
+	$(RESET) process/ext_num_people.done
+
+process/ext_person_mention_by_map_person_mention.done: data/sentences.done
+	## process/ext_person_mention_by_map_person_mention ##########################
+	# Done: $(shell format_timestamp $@ $@~ 2>/dev/null)
+	$(CMD_process)
+	$(TOUCH)
+	##############################################################################
+
+process/ext_person_mention_by_map_person_mention.reset:
+	$(RESET) process/ext_person_mention_by_map_person_mention.done
+
+process/ext_spouse_candidate.done: data/num_people.done data/person_mention.done
+	## process/ext_spouse_candidate ##############################################
+	# Done: $(shell format_timestamp $@ $@~ 2>/dev/null)
+	$(CMD_process)
+	$(TOUCH)
+	##############################################################################
+
+process/ext_spouse_candidate.reset:
+	$(RESET) process/ext_spouse_candidate.done
+
+process/ext_spouse_feature_by_extract_spouse_features.done: data/person_mention.done data/sentences.done
+	## process/ext_spouse_feature_by_extract_spouse_features #####################
+	# Done: $(shell format_timestamp $@ $@~ 2>/dev/null)
+	$(CMD_process)
+	$(TOUCH)
+	##############################################################################
+
+process/ext_spouse_feature_by_extract_spouse_features.reset:
+	$(RESET) process/ext_spouse_feature_by_extract_spouse_features.done
+
+process/ext_spouse_label_by_supervise.done: data/person_mention.done data/sentences.done data/spouse_candidate.done
+	## process/ext_spouse_label_by_supervise #####################################
+	# Done: $(shell format_timestamp $@ $@~ 2>/dev/null)
+	$(CMD_process)
+	$(TOUCH)
+	##############################################################################
+
+process/ext_spouse_label_by_supervise.reset:
+	$(RESET) process/ext_spouse_label_by_supervise.done
+
+process/ext_spouse_label_resolved.done: data/spouse_label.done
+	## process/ext_spouse_label_resolved #########################################
+	# Done: $(shell format_timestamp $@ $@~ 2>/dev/null)
+	$(CMD_process)
+	$(TOUCH)
+	##############################################################################
+
+process/ext_spouse_label_resolved.reset:
+	$(RESET) process/ext_spouse_label_resolved.done
+
+data/articles.done: process/init/relation/articles.done
+	## data/articles #############################################################
+	# Done: $(shell format_timestamp $@ $@~ 2>/dev/null)
+	$(CMD_data)
+	$(TOUCH)
+	##############################################################################
+
+data/articles.reset:
+	$(RESET) data/articles.done
+
+data/has_spouse.done: process/ext_has_spouse.done
+	## data/has_spouse ###########################################################
+	# Done: $(shell format_timestamp $@ $@~ 2>/dev/null)
+	$(CMD_data)
+	$(TOUCH)
+	##############################################################################
+
+data/has_spouse.reset:
+	$(RESET) data/has_spouse.done
+
+data/num_people.done: process/ext_num_people.done
+	## data/num_people ###########################################################
+	# Done: $(shell format_timestamp $@ $@~ 2>/dev/null)
+	$(CMD_data)
+	$(TOUCH)
+	##############################################################################
+
+data/num_people.reset:
+	$(RESET) data/num_people.done
+
+data/person_mention.done: process/ext_person_mention_by_map_person_mention.done
+	## data/person_mention #######################################################
+	# Done: $(shell format_timestamp $@ $@~ 2>/dev/null)
+	$(CMD_data)
+	$(TOUCH)
+	##############################################################################
+
+data/person_mention.reset:
+	$(RESET) data/person_mention.done
+
+data/sentences.done: process/init/relation/sentences.done
+	## data/sentences ############################################################
+	# Done: $(shell format_timestamp $@ $@~ 2>/dev/null)
+	$(CMD_data)
+	$(TOUCH)
+	##############################################################################
+
+data/sentences.reset:
+	$(RESET) data/sentences.done
+
+data/spouse_candidate.done: process/ext_spouse_candidate.done
+	## data/spouse_candidate #####################################################
+	# Done: $(shell format_timestamp $@ $@~ 2>/dev/null)
+	$(CMD_data)
+	$(TOUCH)
+	##############################################################################
+
+data/spouse_candidate.reset:
+	$(RESET) data/spouse_candidate.done
+
+data/spouse_feature.done: process/ext_spouse_feature_by_extract_spouse_features.done
+	## data/spouse_feature #######################################################
+	# Done: $(shell format_timestamp $@ $@~ 2>/dev/null)
+	$(CMD_data)
+	$(TOUCH)
+	##############################################################################
+
+data/spouse_feature.reset:
+	$(RESET) data/spouse_feature.done
+
+data/spouse_label.done: process/ext_spouse_label_by_supervise.done
+	## data/spouse_label #########################################################
+	# Done: $(shell format_timestamp $@ $@~ 2>/dev/null)
+	$(CMD_data)
+	$(TOUCH)
+	##############################################################################
+
+data/spouse_label.reset:
+	$(RESET) data/spouse_label.done
+
+data/spouse_label_resolved.done: process/ext_spouse_label_resolved.done
+	## data/spouse_label_resolved ################################################
+	# Done: $(shell format_timestamp $@ $@~ 2>/dev/null)
+	$(CMD_data)
+	$(TOUCH)
+	##############################################################################
+
+data/spouse_label_resolved.reset:
+	$(RESET) data/spouse_label_resolved.done
+

@@ -1,0 +1,78 @@
+2017-01-08 08:06:06.784692 # on Pranaabs-MacBook-Pro.local: deepdive do spouse_candidate
+2017-01-08 08:06:06.784957 # run/20170108/080603.175382000/plan.sh
+2017-01-08 08:06:06.784988 # execution plan for data/spouse_candidate
+2017-01-08 08:06:06.785010 
+2017-01-08 08:06:06.785030 : ## process/init/app ##########################################################
+2017-01-08 08:06:06.785049 : # Done: 2017-01-07T16:20:10-0500 (15h 45m 53s ago)
+2017-01-08 08:06:06.785067 : process/init/app/run.sh
+2017-01-08 08:06:06.785086 : mark_done process/init/app
+2017-01-08 08:06:06.785106 : ##############################################################################
+2017-01-08 08:06:06.785125 
+2017-01-08 08:06:06.785144 : ## process/init/relation/sentences ###########################################
+2017-01-08 08:06:06.785164 : # Done: 2017-01-07T20:56:10-0500 (11h 9m 53s ago)
+2017-01-08 08:06:06.785183 : process/init/relation/sentences/run.sh
+2017-01-08 08:06:06.785201 : mark_done process/init/relation/sentences
+2017-01-08 08:06:06.785220 : ##############################################################################
+2017-01-08 08:06:06.785238 
+2017-01-08 08:06:06.785259 : ## data/sentences ############################################################
+2017-01-08 08:06:06.785278 : # Done: 2017-01-07T20:56:10-0500 (11h 9m 53s ago)
+2017-01-08 08:06:06.785296 : # no-op
+2017-01-08 08:06:06.785314 : mark_done data/sentences
+2017-01-08 08:06:06.785332 : ##############################################################################
+2017-01-08 08:06:06.785351 
+2017-01-08 08:06:06.785370 : ## process/ext_person_mention_by_map_person_mention ##########################
+2017-01-08 08:06:06.785389 : # Done: 2017-01-07T21:11:42-0500 (10h 54m 21s ago)
+2017-01-08 08:06:06.785406 : process/ext_person_mention_by_map_person_mention/run.sh
+2017-01-08 08:06:06.785422 : mark_done process/ext_person_mention_by_map_person_mention
+2017-01-08 08:06:06.785439 : ##############################################################################
+2017-01-08 08:06:06.785457 
+2017-01-08 08:06:06.785474 : ## data/person_mention #######################################################
+2017-01-08 08:06:06.785491 : # Done: 2017-01-07T21:11:42-0500 (10h 54m 21s ago)
+2017-01-08 08:06:06.785508 : # no-op
+2017-01-08 08:06:06.785525 : mark_done data/person_mention
+2017-01-08 08:06:06.785543 : ##############################################################################
+2017-01-08 08:06:06.785560 
+2017-01-08 08:06:06.785576 ## process/ext_num_people ####################################################
+2017-01-08 08:06:06.785592 # Done: N/A
+2017-01-08 08:06:06.785609 process/ext_num_people/run.sh
+2017-01-08 08:06:06.785625 ++ dirname process/ext_num_people/run.sh
+2017-01-08 08:06:06.785642 + cd process/ext_num_people
+2017-01-08 08:06:06.785659 + export DEEPDIVE_CURRENT_PROCESS_NAME=process/ext_num_people
+2017-01-08 08:06:06.785677 + DEEPDIVE_CURRENT_PROCESS_NAME=process/ext_num_people
+2017-01-08 08:06:06.785694 + deepdive create view num_people as 'SELECT R0.doc_id AS column_0, R0.sentence_index AS column_1, COUNT(R0.mention_id) AS column_2
+2017-01-08 08:06:06.785711 FROM person_mention R0
+2017-01-08 08:06:06.785728         
+2017-01-08 08:06:06.785744         GROUP BY R0.doc_id, R0.sentence_index'
+2017-01-08 08:06:06.900375 CREATE VIEW
+2017-01-08 08:06:06.901459 mark_done process/ext_num_people
+2017-01-08 08:06:06.915559 ##############################################################################
+2017-01-08 08:06:06.915617 
+2017-01-08 08:06:06.915639 ## data/num_people ###########################################################
+2017-01-08 08:06:06.915657 # Done: N/A
+2017-01-08 08:06:06.915675 # no-op
+2017-01-08 08:06:06.915692 mark_done data/num_people
+2017-01-08 08:06:06.927623 ##############################################################################
+2017-01-08 08:06:06.927677 
+2017-01-08 08:06:06.927699 ## process/ext_spouse_candidate ##############################################
+2017-01-08 08:06:06.927715 # Done: N/A
+2017-01-08 08:06:06.927732 process/ext_spouse_candidate/run.sh
+2017-01-08 08:06:06.932189 ++ dirname process/ext_spouse_candidate/run.sh
+2017-01-08 08:06:06.934360 + cd process/ext_spouse_candidate
+2017-01-08 08:06:06.934446 + export DEEPDIVE_CURRENT_PROCESS_NAME=process/ext_spouse_candidate
+2017-01-08 08:06:06.934484 + DEEPDIVE_CURRENT_PROCESS_NAME=process/ext_spouse_candidate
+2017-01-08 08:06:06.934504 + deepdive create table spouse_candidate
+2017-01-08 08:06:07.108464 NOTICE:  table "spouse_candidate" does not exist, skipping
+2017-01-08 08:06:07.112364 CREATE TABLE
+2017-01-08 08:06:07.113163 + deepdive sql 'INSERT INTO spouse_candidate SELECT R1.mention_id AS "person_mention.R1.mention_id", R1.mention_text AS "person_mention.R1.mention_text", R2.mention_id AS "person_mention.R2.mention_id", R2.mention_text AS "person_mention.R2.mention_text"
+2017-01-08 08:06:07.113204 FROM num_people R0, person_mention R1, person_mention R2
+2017-01-08 08:06:07.113226         WHERE R1.doc_id = R0.column_0  AND R1.sentence_index = R0.column_1  AND R2.doc_id = R0.column_0  AND R2.sentence_index = R0.column_1  AND R0.column_2 < 5 AND R1.mention_text != R2.mention_text AND R1.begin_index != R2.begin_index'
+2017-01-08 08:06:08.556486 INSERT 0 11140
+2017-01-08 08:06:08.557571 mark_done process/ext_spouse_candidate
+2017-01-08 08:06:08.571252 ##############################################################################
+2017-01-08 08:06:08.571304 
+2017-01-08 08:06:08.571321 ## data/spouse_candidate #####################################################
+2017-01-08 08:06:08.571339 # Done: N/A
+2017-01-08 08:06:08.571357 # no-op
+2017-01-08 08:06:08.571375 mark_done data/spouse_candidate
+2017-01-08 08:06:08.584720 ##############################################################################
+2017-01-08 08:06:08.584785 

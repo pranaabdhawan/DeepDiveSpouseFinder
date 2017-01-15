@@ -1,0 +1,14 @@
+2017-01-07 16:18:48.442569 # on Pranaabs-MacBook-Pro.local: deepdive do articles
+2017-01-07 16:18:48.442793 # run/20170107/161843.139987000/plan.sh
+2017-01-07 16:18:48.442816 # execution plan for data/articles
+2017-01-07 16:18:48.442834 
+2017-01-07 16:18:48.442853 ## process/init/app ##########################################################
+2017-01-07 16:18:48.442870 # Done: N/A
+2017-01-07 16:18:48.442885 process/init/app/run.sh
+2017-01-07 16:18:48.442900 ++ dirname process/init/app/run.sh
+2017-01-07 16:18:48.442915 + cd process/init/app
+2017-01-07 16:18:48.442932 + export DEEPDIVE_CURRENT_PROCESS_NAME=process/init/app
+2017-01-07 16:18:48.442952 + DEEPDIVE_CURRENT_PROCESS_NAME=process/init/app
+2017-01-07 16:18:48.442968 + deepdive db init
+2017-01-07 16:18:58.479202 dropdb: could not connect to database template1: could not translate host name "Pranaabs-MacBook-Pro.local" to address: nodename nor servname provided, or not known
+2017-01-07 16:19:08.503372 createdb: could not connect to database template1: could not translate host name "Pranaabs-MacBook-Pro.local" to address: nodename nor servname provided, or not known

@@ -1,0 +1,33 @@
+2017-01-08 09:10:28.105610 ‘run/LATEST.COMPILE’ -> ‘20170108/091028.045309000’
+2017-01-08 09:10:28.106004 ‘run/RUNNING.COMPILE’ -> ‘20170108/091028.045309000’
+2017-01-08 09:10:28.106085 Parsing DeepDive application (/Users/pranaab/Developer/Term3A/URA/spouseLocal) to generate:
+2017-01-08 09:10:28.106122  run/compiled/schema.json
+2017-01-08 09:10:28.106251   from app.ddlog
+2017-01-08 09:10:28.658536  run/compiled/deepdive.conf
+2017-01-08 09:10:28.658693   from app.ddlog
+2017-01-08 09:10:29.320797   from deepdive.conf
+2017-01-08 09:10:29.328250  run/compiled/deepdive.conf.json
+2017-01-08 09:10:29.779800 Performing sanity checks on run/compiled/deepdive.conf.json:
+2017-01-08 09:10:29.832040  checking if input_extractors_well_defined
+2017-01-08 09:10:29.832112  checking if input_schema_wellformed
+2017-01-08 09:10:29.832624 Normalizing and adding built-in processes to the data flow to compile:
+2017-01-08 09:10:29.833485  run/compiled/config-0.00-init_objects.json
+2017-01-08 09:10:29.849120  run/compiled/config-0.01-parse_calibration.json
+2017-01-08 09:10:29.863175  run/compiled/config-0.01-parse_schema.json
+2017-01-08 09:10:29.881336  run/compiled/config-0.51-add_init_app.json
+2017-01-08 09:10:29.894960  run/compiled/config-0.52-input_loader.json
+2017-01-08 09:10:29.910322  run/compiled/config-1.00-qualified_names.json
+2017-01-08 09:10:29.938054  run/compiled/config-1.01-parse_inference_rules.json
+2017-01-08 09:10:29.961361  run/compiled/config-2.01-grounding.json
+2017-01-08 09:10:30.028882  run/compiled/config-2.02-learning_inference.json
+2017-01-08 09:10:30.048451  run/compiled/config-2.03-calibration_plots.json
+2017-01-08 09:10:30.063973  run/compiled/config-9.98-ensure_init_app.json
+2017-01-08 09:10:30.078700  run/compiled/config-9.99-dependencies.json
+2017-01-08 09:10:30.094348  run/compiled/config.json
+2017-01-08 09:10:30.097100 Validating run/compiled/config.json:
+2017-01-08 09:10:30.177954  checking if compiled_base_relations_have_input_data
+2017-01-08 09:10:30.178006  checking if compiled_dependencies_correct
+2017-01-08 09:10:30.178028  checking if compiled_input_output_well_defined
+2017-01-08 09:10:30.178046  jq: error (at run/20170108/091028.045309000/config.json:920): process/ext_spouse_label_by_supervise has output_relation undefined in schema.json: 'data/spouse_label'
+2017-01-08 09:10:30.178062  [ERROR] FAILED deepdive check compiled_input_output_well_defined
+2017-01-08 09:10:30.178078  checking if compiled_output_uniquely_defined

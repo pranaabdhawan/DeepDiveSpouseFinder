@@ -1,0 +1,76 @@
+2017-01-08 08:32:51.672245 # on Pranaabs-MacBook-Pro.local: deepdive do spouse_feature
+2017-01-08 08:32:51.672497 # run/20170108/083248.685105000/plan.sh
+2017-01-08 08:32:51.672525 # execution plan for data/spouse_feature
+2017-01-08 08:32:51.672546 
+2017-01-08 08:32:51.672566 : ## process/init/app ##########################################################
+2017-01-08 08:32:51.672584 : # Done: 2017-01-07T16:20:10-0500 (16h 12m 38s ago)
+2017-01-08 08:32:51.672600 : process/init/app/run.sh
+2017-01-08 08:32:51.672617 : mark_done process/init/app
+2017-01-08 08:32:51.672633 : ##############################################################################
+2017-01-08 08:32:51.672651 
+2017-01-08 08:32:51.672671 : ## process/init/relation/sentences ###########################################
+2017-01-08 08:32:51.672689 : # Done: 2017-01-07T20:56:10-0500 (11h 36m 38s ago)
+2017-01-08 08:32:51.672708 : process/init/relation/sentences/run.sh
+2017-01-08 08:32:51.672728 : mark_done process/init/relation/sentences
+2017-01-08 08:32:51.672748 : ##############################################################################
+2017-01-08 08:32:51.672768 
+2017-01-08 08:32:51.672787 : ## data/sentences ############################################################
+2017-01-08 08:32:51.672807 : # Done: 2017-01-07T20:56:10-0500 (11h 36m 38s ago)
+2017-01-08 08:32:51.672828 : # no-op
+2017-01-08 08:32:51.672846 : mark_done data/sentences
+2017-01-08 08:32:51.672865 : ##############################################################################
+2017-01-08 08:32:51.672883 
+2017-01-08 08:32:51.672900 : ## process/ext_person_mention_by_map_person_mention ##########################
+2017-01-08 08:32:51.672917 : # Done: 2017-01-07T21:11:42-0500 (11h 21m 6s ago)
+2017-01-08 08:32:51.672933 : process/ext_person_mention_by_map_person_mention/run.sh
+2017-01-08 08:32:51.672950 : mark_done process/ext_person_mention_by_map_person_mention
+2017-01-08 08:32:51.672967 : ##############################################################################
+2017-01-08 08:32:51.672984 
+2017-01-08 08:32:51.673001 : ## data/person_mention #######################################################
+2017-01-08 08:32:51.673018 : # Done: 2017-01-07T21:11:42-0500 (11h 21m 6s ago)
+2017-01-08 08:32:51.673032 : # no-op
+2017-01-08 08:32:51.673043 : mark_done data/person_mention
+2017-01-08 08:32:51.673054 : ##############################################################################
+2017-01-08 08:32:51.673065 
+2017-01-08 08:32:51.673076 ## process/ext_spouse_feature_by_extract_spouse_features #####################
+2017-01-08 08:32:51.673086 # Done: N/A
+2017-01-08 08:32:51.673097 process/ext_spouse_feature_by_extract_spouse_features/run.sh
+2017-01-08 08:32:51.673109 ++ dirname process/ext_spouse_feature_by_extract_spouse_features/run.sh
+2017-01-08 08:32:51.673120 + cd process/ext_spouse_feature_by_extract_spouse_features
+2017-01-08 08:32:51.673130 + export DEEPDIVE_CURRENT_PROCESS_NAME=process/ext_spouse_feature_by_extract_spouse_features
+2017-01-08 08:32:51.673141 + DEEPDIVE_CURRENT_PROCESS_NAME=process/ext_spouse_feature_by_extract_spouse_features
+2017-01-08 08:32:51.673152 + export DEEPDIVE_LOAD_FORMAT=tsv
+2017-01-08 08:32:51.673162 + DEEPDIVE_LOAD_FORMAT=tsv
+2017-01-08 08:32:51.673175 + deepdive compute execute 'input_sql= SELECT R0.mention_id AS "person_mention.R0.mention_id", R1.mention_id AS "person_mention.R1.mention_id", R0.begin_index AS "person_mention.R0.begin_index", R0.end_index AS "person_mention.R0.end_index", R1.begin_index AS "person_mention.R1.begin_index", R1.end_index AS "person_mention.R1.end_index", R0.doc_id AS "person_mention.R0.doc_id", R0.sentence_index AS "person_mention.R0.sentence_index", R2.tokens AS "sentences.R2.tokens", R2.lemmas AS "sentences.R2.lemmas", R2.pos_tags AS "sentences.R2.pos_tags", R2.ner_tags AS "sentences.R2.ner_tags", R2.dep_types AS "sentences.R2.dep_types", R2.dep_tokens AS "sentences.R2.dep_tokens"
+2017-01-08 08:32:51.673186 FROM person_mention R0, person_mention R1, sentences R2
+2017-01-08 08:32:51.673197         WHERE R1.doc_id = R0.doc_id  AND R1.sentence_index = R0.sentence_index  AND R2.doc_id = R0.doc_id  AND R2.sentence_index = R0.sentence_index 
+2017-01-08 08:32:51.673208           ' 'command="$DEEPDIVE_APP"/udf/extract_spouse_features.py' output_relation=spouse_feature
+2017-01-08 08:32:51.707676 Executing with the following configuration:
+2017-01-08 08:32:51.707736  DEEPDIVE_NUM_PROCESSES=3
+2017-01-08 08:32:51.707758  DEEPDIVE_NUM_PARALLEL_UNLOADS=1
+2017-01-08 08:32:51.707776  DEEPDIVE_NUM_PARALLEL_LOADS=1
+2017-01-08 08:32:51.707843  output_relation_tmp=dd_tmp_spouse_feature
+2017-01-08 08:32:51.707867 
+2017-01-08 08:32:51.936649 CREATE TABLE
+2017-01-08 08:32:53.116758 CREATE TABLE
+2017-01-08 08:32:53.256849 unloading to feed_processes-1: ' SELECT R0.mention_id AS "person_mention.R0.mention_id", R1.mention_id AS "person_mention.R1.mention_id", R0.begin_index AS "person_mention.R0.begin_index", R0.end_index AS "person_mention.R0.end_index", R1.begin_index AS "person_mention.R1.begin_index", R1.end_index AS "person_mention.R1.end_index", R0.doc_id AS "person_mention.R0.doc_id", R0.sentence_index AS "person_mention.R0.sentence_index", R2.tokens AS "sentences.R2.tokens", R2.lemmas AS "sentences.R2.lemmas", R2.pos_tags AS "sentences.R2.pos_tags", R2.ner_tags AS "sentences.R2.ner_tags", R2.dep_types AS "sentences.R2.dep_types", R2.dep_tokens AS "sentences.R2.dep_tokens"
+2017-01-08 08:32:53.256909 FROM person_mention R0, person_mention R1, sentences R2
+2017-01-08 08:32:53.256932         WHERE R1.doc_id = R0.doc_id  AND R1.sentence_index = R0.sentence_index  AND R2.doc_id = R0.doc_id  AND R2.sentence_index = R0.sentence_index 
+2017-01-08 08:32:53.256953           '
+2017-01-08 08:32:53.302638 Loading dd_tmp_spouse_feature from output_computed-1 (tsv format)
+2017-01-08 09:01:11.984862 COPY 49186214
+2017-01-08 09:01:11.989620 Replacing spouse_feature with dd_tmp_spouse_feature
+2017-01-08 09:01:12.065721 DROP TABLE
+2017-01-08 09:01:12.124269 ALTER TABLE
+2017-01-08 09:01:12.177811 ALTER TABLE
+2017-01-08 09:01:12.249012 DROP TABLE
+2017-01-08 09:01:18.088779 ANALYZE
+2017-01-08 09:01:18.096771 mark_done process/ext_spouse_feature_by_extract_spouse_features
+2017-01-08 09:01:18.116349 ##############################################################################
+2017-01-08 09:01:18.116439 
+2017-01-08 09:01:18.116460 ## data/spouse_feature #######################################################
+2017-01-08 09:01:18.116478 # Done: N/A
+2017-01-08 09:01:18.116496 # no-op
+2017-01-08 09:01:18.116513 mark_done data/spouse_feature
+2017-01-08 09:01:18.129443 ##############################################################################
+2017-01-08 09:01:18.129502 
